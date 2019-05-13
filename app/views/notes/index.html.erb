@@ -1,8 +1,10 @@
 <h1> Post-it Notes </h1>
-<p><%= link_to 'New Note', new_note_path %>
+<p><%= link_to 'New Note', new_note_path %></p>
 <hr />
 
 <% @notes.each do |note| %>
-  <h2><%= note.title %></h2>
+  <h2> <%= note.title %> </h2>
   <%= link_to 'Show Note', note_path(note) %>
+  <%= link_to 'Edit Note', edit_note_path(note) %>
+  <%= link_to 'Destroy Note', note, method: :delete %>
 <% end %>
